@@ -1,0 +1,141 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>嵌入音乐播放器</title> 
+    <!-- 引入 APlayer 的 CSS 文件 --> 
+    <link rel="stylesheet" href="./APlayer-1.10.1/dist/APlayer.min.css">  
+</head> 
+<body> 
+    <div id="music-player-container"></div> 
+    <!-- 引入 APlayer 的 JS 文件 --> 
+    <script src="./APlayer-1.10.1/dist/APlayer.min.js"></script>  
+    <script> 
+        // 初始化 APlayer 
+        const ap = new APlayer({ 
+            container: document.getElementById('music-player-container'),
+            audio: [ 
+            {
+                name: "一百年后",
+                artist: "韩睿",
+                url: "http://sky4726.pp.ua:5255/d/wangyiyun/F.I.R.%E9%A3%9E%E5%84%BF%E4%B9%90%E5%9B%A2%20-%20%E4%B8%80%E7%99%BE%E5%B9%B4%E5%90%8E.mp3",
+                cover: "https://picsum.photos/300/300?random=1"
+            },
+            {
+                name: "童话镇",
+                artist: "陈一发儿",
+                url: "http://sky4726.pp.ua:5255/d/wangyiyun/%E9%99%88%E4%B8%80%E5%8F%91%E5%84%BF%20-%20%E7%AB%A5%E8%AF%9D%E9%95%87.mp3",
+                cover: "https://picsum.photos/300/300?random=2"
+            },
+            {
+                name: "毒蘑菇",
+                artist: "周笔畅",
+                url: "http://sky4726.pp.ua:5255/d/wangyiyun/%E6%AF%92%E8%98%91%E8%8F%87-%E5%91%A8%E7%AC%94%E7%95%85.mp3",
+                cover: "https://picsum.photos/300/300?random=3"
+            },
+            {
+                name: "天灰",
+                artist: "S.H.E",
+                url: "http://sky4726.pp.ua:5255/d/wangyiyun/%E5%A4%A9%E7%81%B0-S.H.E.mp3",
+                cover: "https://picsum.photos/300/300?random=4"
+            },
+            {
+                name: "爱就爱了",
+                artist: "陈琳",
+                url: "http://sky4726.pp.ua:5255/d/wangyiyun/%E7%88%B1%E5%B0%B1%E7%88%B1%E4%BA%86-%E9%99%88%E7%90%B3.mp3",
+                cover: "https://picsum.photos/300/300?random=6"
+            },
+            {
+                name: "勇气",
+                artist: "梁静茹",
+                url: "http://sky4726.pp.ua:5255/d/wangyiyun/%E5%8B%87%E6%B0%94(%E7%94%B5%E8%A7%86%E5%89%A7%E3%80%8A%E4%BE%A0%E5%A5%B3%E9%97%AF%E5%A4%A9%E5%85%B3%E3%80%8B%E7%89%87%E5%B0%BE%E6%9B%B2)-%E6%A2%81%E9%9D%99%E8%8C%B9.mp3",
+                cover: "https://picsum.photos/300/300?random=7"
+            },
+            {
+                name: "我不难过",
+                artist: "孙燕姿",
+                url: "http://sky4726.pp.ua:5255/d/wangyiyun/%E6%88%91%E4%B8%8D%E9%9A%BE%E8%BF%87-%E5%AD%99%E7%87%95%E5%A7%BF.mp3",
+                cover: "https://picsum.photos/300/300?random=9"
+            },
+            {
+                name: "第三人称",
+                artist: "于晴",
+                url: "http://sky4726.pp.ua:5255/d/wangyiyun/%E7%AC%AC%E4%B8%89%E4%BA%BA%E7%A7%B0-%E4%BA%8E%E6%99%B4.mp3",
+                cover: "https://picsum.photos/300/300?random=10"
+            },
+            {
+                name: "惩罚",
+                artist: "羽·泉",
+                url: "http://sky4726.pp.ua:5255/d/wangyiyun/%E6%83%A9%E7%BD%9A-%E7%BE%BD%E6%B3%89.mp3",
+                cover: "https://picsum.photos/300/300?random=9"
+            },
+            {
+                name: "飞蛾",
+                artist: "羽·泉",
+                url: "http://sky4726.pp.ua:5255/d/wangyiyun/%E9%A3%9E%E8%9B%BE-%E7%BE%BD%E6%B3%89.mp3",
+                cover: "https://picsum.photos/300/300?random=10"
+            },
+            {
+                name: "火柴",
+                artist: "羽·泉",
+                url: "http://sky4726.pp.ua:5255/d/wangyiyun/%E7%81%AB%E6%9F%B4-%E7%BE%BD%E6%B3%89.mp3",
+                cover: "https://picsum.photos/300/300?random=11"
+            },
+            {
+                name: "自由奔向广阔的世界",
+                artist: "大粉乐队",
+                url: "http://sky4726.pp.ua:5255/d/wangyiyun/%E8%87%AA%E7%94%B1%E5%A5%94%E5%90%91%E5%B9%BF%E9%98%94%E7%9A%84%E4%B8%96%E7%95%8C-%E5%A4%A7%E7%B2%89%E4%B9%90%E9%98%9F.mp3",
+                cover: "https://picsum.photos/300/300?random=12"
+            },
+            {
+                name: "我们的爱",
+                artist: "韩睿",
+                url: "http://sky4726.pp.ua:5255/d/wangyiyun/%E9%9F%A9%E7%9D%BF-%E6%88%91%E4%BB%AC%E7%9A%84%E7%88%B1.mp3",
+                cover: "https://picsum.photos/300/300?random=13"
+            },
+            {
+                name: "美丽的你",
+                artist: "韩睿",
+                url: "http://sky4726.pp.ua:5255/d/wangyiyun/F.I.R.%E9%A3%9E%E5%84%BF%E4%B9%90%E5%9B%A2-%E7%BE%8E%E4%B8%BD%E7%9A%84%E4%BD%A0%20Under%20Your%20Skin.mp3",
+                cover: "https://picsum.photos/300/300?random=14"
+            },
+            {
+                name: "你的微笑",
+                artist: "F.I.R.飞儿乐团",
+                url: "http://sky4726.pp.ua:5255/d/wangyiyun/%E4%BD%A0%E7%9A%84%E5%BE%AE%E7%AC%91-F.I.R.%E9%A3%9E%E5%84%BF%E4%B9%90%E5%9B%A2.mp3",
+                cover: "https://picsum.photos/300/300?random=15"
+            },
+            {
+                name: "野心家",
+                artist: "张靓颖",
+                url: "http://sky4726.pp.ua:5255/d/wangyiyun/%E5%BC%A0%E9%9D%93%E9%A2%96%20-%20%E9%87%8E%E5%BF%83%E5%AE%B6.mp3",
+                cover: "https://picsum.photos/300/300?random=16"
+            },
+            {
+                name: "不凡2024",
+                artist: "王铮亮",
+                url: "http://sky4726.pp.ua:5255/d/wangyiyun/%E7%8E%8B%E9%93%AE%E4%BA%AE%20-%20%E4%B8%8D%E5%87%A12024.mp3",
+                cover: "https://picsum.photos/300/300?random=17"
+            },
+            {
+                name: "恋人",
+                artist: "李荣浩",
+                url: "http://sky4726.pp.ua:5255/d/wangyiyun/%E6%9D%8E%E8%8D%A3%E6%B5%A9%20-%20%E6%81%8B%E4%BA%BA.mp3",
+                cover: "https://picsum.photos/300/300?random=18"
+            },
+            {
+                name: "阳光下的星星",
+                artist: "金海心",
+                url: "http://sky4726.pp.ua:5255/d/wangyiyun/%E9%87%91%E6%B5%B7%E5%BF%83%20-%20%E9%98%B3%E5%85%89%E4%B8%8B%E7%9A%84%E6%98%9F%E6%98%9F08915.mp3",
+                cover: "https://picsum.photos/300/300?random=19"
+            }
+            ],
+        loop: 'all',  // 循环模式: all全部循环, one单曲循环, none不循环 
+        order: 'list',  // 播放顺序: list列表顺序, random随机播放 
+        autoplay: true, // 关键设置 - 启用自动播放 
+        preload: 'auto' // 建议设置为自动预加载
+        });
+    </script> 
+</body> 
+</html> 
